@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+
+<title>IMDB Datasets</title>
+</head>
+<body>
+	<h1>Movie List</h1>
+	<hr>
+	<input type="text" name="title" id="title" th:value="${title}" required />
+	<a th:href="@{/}" class="btn btn-primary btn-sm mb-3">Search With
+		Title</a>
+	<form action="#" th:action="@{/search}"
+				 th:object="${title_basics}" method="POST"> -->
+
+	<hr>
+	<hr>
+	<input type="text" name="genre" id="genre" th:value="${genre}" required />
+	<a th:href="@{/}" class="btn btn-primary btn-sm mb-3">Search With
+		Genre</a>
+	<!-- <form action="#" th:action="@{/search}"
+				 th:object="${titleBasic}" method="POST"> -->
+	<table border="1" class="table table-striped table-responsive-md">
+		<thead>
+			<tr>
+				<th>tconst</th>
+				<th>primary title</th>
+				<th>original title</th>
+				<th>startyear</th>
+				<th>runtimeminutes</th>
+				<th>genres</th>
+				<!-- <th>Ratings</th>
+				<th>Writers</th>
+				<th>Directors</th> -->
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="title_basics : ${movies}">
+				<td th:text="${title_basics.tconst}"></td>
+				<td th:text="${title_basics.primarytitle}"></td>
+				<td th:text="${title_basics.originaltitle}"></td>
+				<td th:text="${title_basics.isadult}"></td>
+				<td th:text="${title_basics.startyear}"></td>
+				<td th:text="${title_basics.endyear}"></td>
+				<td th:text="${title_basics.runtimeminutes}"></td>
+				<td th:text="${title_basics.genres}"></td>
+				<!-- <td th:text="${title_basics.title_ratings.averagerating}"></td>
+				<td th:text="${title_basics.title_crew.writers}"></td>
+				<td th:text="${title_basics.title_crew.directors}"></td>
+ -->
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>
