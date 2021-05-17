@@ -84,7 +84,7 @@ public class TitlePrincipals {
 	// toString method
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
+		
 		return super.toString();
 	}
 
